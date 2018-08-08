@@ -74,5 +74,10 @@ def query_by_id(student_id):
     student = session.query(Student).filter_by(
         student_id=student_id).first()
     return student
-# add_student("noam",2,False)
+# add_student("Gassan",3,True)
+# add_student("Dana",1,True)
+# add_student("Itamar",2,False)
+# add_student("Asaf",3,False)
+# add_student("Einav",2,True)
+
 # delete_all()

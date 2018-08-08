@@ -2,11 +2,74 @@
 <html>
 <head>
     <title>Student</title>
-	<link rel="stylesheet" type="text/css" href="">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css.css')}}">
+	<style>
+	body{
+		background-color:lightblue;
+		font-family:Comic Sans MS;
+	}
+	#header{
+		text-align:center;
+		border-bottom: 1px solid black;
+	}
+	#return_home{
+		border:2px solid black;
+		padding:3px;
+		background-color:chocolate;
+		text-decoration: none;
+		color:white;
+		position:fixed;
+		bottom:0.5%;
+		margin-left:42%;
+		margin-right:42%;
+		font-size:30px;
+	}
+	#return_home:hover{
+		background-color:coral;
+		border:2px solid white;
+	}
+	#info{
+
+		position:absolute;
+		left:0%;
+		top:30%;
+		border:1px solid black;
+		margin-right: 30%;
+		margin-left:30%;
+		text-align:center;
+		position:absolute;
+
+
+	}
+	#greet{
+
+		font-size:35px;
+		border-bottom:1px solid black;
+
+
+	}
+	#finished{
+		font-size:25px;
+	}
+
+
+
+	</style>
 </head>
 <body>
-    <h1>This is the page for the student with id {{ student_id }}.</h1>
-    <a href = "{{ url_for('home') }}">return home</a>
-    <h1>hello {{name}}!</h1>
+    <h1 id = "header">This is the page for the student with id {{ student_id }}.</h1>
+    <a href = "{{ url_for('home') }}" id = "return_home">return home</a>
+    <h1 id = "info">
+    <div id = "greet">
+    	hello {{name}} (year {{year}}),
+    </div>
+    <div id = "finished">
+    	{% if finished == True%}
+    	it seems like you have finished the lab, get some rest
+   		{%else%}
+    	it seems like you haven't finished the lab, get to it now, <br>you can do it!
+    {%endif%}
+	</div>
+    </h1>
 </body>
 </html>

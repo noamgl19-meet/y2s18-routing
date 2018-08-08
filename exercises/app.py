@@ -9,10 +9,14 @@ def home():
 def display_student(student_id):
 	student = query_by_id(student_id)
 	name = student.name
+	year = student.year
+	finished = student.finished_lab
 	return render_template(
 		"student.html",
 		student_id = student_id,
-		name = name
+		name = name,
+		year = year,
+		finished = finished
 		)
 
 app.run(debug=True)
